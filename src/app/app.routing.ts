@@ -5,12 +5,14 @@ import { MusicaComponent } from './components/musica.component/musica.component'
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { NotfoundComponent } from './components/notfound.component/notfound.component';
+import { NumeroDobleComponent } from './components/numero.doble.component/numero.doble.component';
 
 //NECESITAMOS UN ARRAY CON LAS RUTAS, DICHO ARRAY SERA DE TIPO Routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cine', component: CineComponent },
   { path: 'musica', component: MusicaComponent },
+  { path: 'numerodoble', component: NumeroDobleComponent },
 
   { path: '**', component: NotfoundComponent },
 ];

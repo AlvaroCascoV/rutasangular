@@ -9,9 +9,10 @@ import { CineComponent } from './components/cine.component/cine.component';
 import { MusicaComponent } from './components/musica.component/musica.component';
 import { MenuComponent } from './components/menu.component/menu.component';
 import { NotfoundComponent } from './components/notfound.component/notfound.component';
+import { NumeroDobleComponent } from './components/numero.doble.component/numero.doble.component';
 
 @NgModule({
-  declarations: [App, HomeComponent, CineComponent, MusicaComponent, MenuComponent, NotfoundComponent],
+  declarations: [App, HomeComponent, CineComponent, MusicaComponent, MenuComponent, NotfoundComponent, NumeroDobleComponent],
   imports: [BrowserModule, routing],
   providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
   bootstrap: [App],
