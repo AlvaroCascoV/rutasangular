@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-numero.doble',
@@ -6,4 +7,24 @@ import { Component } from '@angular/core';
   templateUrl: './numero.doble.component.html',
   styleUrl: './numero.doble.component.css',
 })
-export class NumeroDobleComponent {}
+export class NumeroDobleComponent implements OnInit {
+  public doble: number;
+  public numero!: number;
+
+  constructor(private _activatedRoute: ActivatedRoute) {
+    this.doble = 0;
+  }
+  ngOnInit(): void {
+    //AQUI ES DONDE NOS SUBSCRIBIMOS A LOS PARAMETROS
+    this._activatedRoute.params.subscribe((parametros: Params) => {
+      //DENTRO DE Params ES DONDE RECIBIMOS LOS PARAMETROS POR SU :name
+      //LA SINTAXIS PARA RECUPERARLOS ES params['PARAMETER NAME']
+      //EN ESTE EJEMPLO, EL PARAMETRO ES OPCIONAL
+      if (parametros['numero'] != null) {
+        //EL PARAMETRO SIEMPRE SON STRING
+        this.numero = parseInt(parametros['numero']);
+        this.doble = this.numero * 2;
+      }
+    });
+  }
+}
