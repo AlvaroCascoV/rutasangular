@@ -1,0 +1,18 @@
+<div>
+  <ul id="menu">
+    <li>
+      <a [routerLink]="['/']">Home</a>
+      |
+    </li>
+    <li>
+      <a [routerLink]="['/tabla']">Tabla Multiplicar</a>
+      |
+    </li>
+    @for (num of numeros; track num) {
+    <li>
+      <a [routerLink]="['/tabla', num]">Tabla de {{ num }}</a>
+      |
+    </li>
+    }
+  </ul>
+</div>
