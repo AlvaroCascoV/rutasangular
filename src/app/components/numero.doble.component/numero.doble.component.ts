@@ -14,6 +14,11 @@ export class NumeroDobleComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute, private _router: Router) {
     this.doble = 0;
   }
+
+  redirect(num: number): void {
+    this._router.navigate(['/numerodoble', num]);
+  }
+
   goToHome(): void {
     this._router.navigate(['/']);
   }
